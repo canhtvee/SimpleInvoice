@@ -10,7 +10,7 @@ const MMKVwithID = new MMKV({
 });
 
 const AppAccount = {
-  get: (): object => {
+  get: (): any => {
     const data = MMKVwithID.getString(mmkvKey);
     try {
       return JSON.parse(data as string);
