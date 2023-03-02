@@ -5,7 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useFormState} from 'react-hook-form';
 
 import {AppButtonNormal} from '../../commons';
-import {AppAccount, FetchApi, Sizes} from '../../utils';
+import {AppAccount, FetchApi, resetToHome, Sizes} from '../../utils';
 
 export function LoginSubmit({control, handleSubmit}) {
   const navigation = useNavigation();
@@ -19,15 +19,17 @@ export function LoginSubmit({control, handleSubmit}) {
         throw new Error();
       }
 
+      AppAccount.set(loginResult);
+
       // Get user profile right after sucessfully login
       const userProfile = await FetchApi.getUserProfile();
       if (!userProfile?.data) {
         throw new Error();
       }
 
-      AppAccount.set({...loginResult, ...userProfile.data});
+      AppAccount.set(userProfile.data);
 
-      navigation.replace('InvoiceList');
+      resetToHome();
     } catch (error) {
       Alert.alert(null, 'Login failed \nPlease try again!');
     }

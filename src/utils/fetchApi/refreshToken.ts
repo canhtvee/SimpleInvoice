@@ -2,18 +2,13 @@ import {Alert} from 'react-native';
 import {Constants} from '../resources';
 import {AppAccount} from '../account';
 
-import {Apis} from './apis';
+// To advoid duplicated refresh token
 
-/**
- * To advoid duplicated refresh token
- */
 let refreshTokenQueue: any;
-/**
- * Refesh token routine
- */
+
 async function handleRefreshToken() {
   const account = AppAccount.get();
-  const api = Apis.login;
+  const api = '';
 
   const header = {
     method: 'POST',

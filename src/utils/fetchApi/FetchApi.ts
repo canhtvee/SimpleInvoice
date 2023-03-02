@@ -1,7 +1,8 @@
+import {AppAccount} from '../account';
+
 import {authOption, commonCall} from './commonCall';
 import {Apis} from './apis';
 import {GetInvoiceParams} from './types';
-import {AppAccount} from '../account';
 
 export const mockApi = (data: any) =>
   new Promise(resolve => {

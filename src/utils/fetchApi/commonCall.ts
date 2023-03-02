@@ -10,7 +10,6 @@ async function commonCall(
 ) {
   // To handle all cases by changing option
   const {withToken = true, withRefreshToken = true} = options || {};
-  const account = AppAccount.get();
 
   try {
     const headers = {
@@ -19,7 +18,11 @@ async function commonCall(
     };
 
     // If use access token
-    withToken && (headers.Authorization = `Bearer ${account.access_token}`);
+    if (withToken) {
+      const account = AppAccount.get();
+      // console.log('account', account);
+      headers.Authorization = `Bearer ${account.access_token}`;
+    }
     const _header = {...header, headers};
 
     let response = await fetch(api, _header);
