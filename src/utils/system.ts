@@ -9,8 +9,6 @@ const appVersion = Platform.select({ios: '0.0.1', android: '0.0.1'});
  */
 
 //production
-const host = {
-  api: 'https://api.app.com',
-};
+const apiHost = 'https://sandbox.101digital.io';
 
-export {isIOS, host, deviceType, appVersion};
+export {isIOS, apiHost, deviceType, appVersion};

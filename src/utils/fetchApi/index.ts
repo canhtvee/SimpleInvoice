@@ -1,3 +1,1 @@
-import {FetchApi} from './FetchApi';
-
-export {FetchApi};
+export * from './FetchApi';

@@ -3,4 +3,5 @@ export const Strings = {
   logout: 'Logout',
   sessionExpired: 'Session expired',
   serverMaintaining: 'Server is maintaining \nPlease try again later!',
+  contentEmpty: 'Data is not available',
 };

@@ -1,59 +1,56 @@
+import {authOption, commonCall} from './commonCall';
+import {Apis} from './apis';
+import {GetInvoiceParams} from './types';
 import {AppAccount} from '../account';
-import {Constants} from '../resources';
-import {refreshToken} from './refreshToken';
 
-const commonCall = async (api: string, header: any, options: any) => {
-  // To handle all cases by changing option
-  const {withToken = true, withRefreshToken = true} = options;
-  const account = AppAccount.get();
-
-  try {
-    const headers = {
-      'Content-Type': 'application/json',
-      ...header?.headers,
-    };
-
-    // If use access token
-    withToken && (headers.Authorization = `Bearer ${account.token}`);
-
-    const _header = {...header, headers};
-    let response = await fetch(api, _header);
-    let result = await response.json();
-
-    // If refresh token
-    if (
-      response.status === 401 &&
-      (result?.error?.code === Constants.INVALID_TOKEN ||
-        result?.error?.code === Constants.TOKEN_EXPIRED) &&
-      withRefreshToken
-    ) {
-      const newToken = await refreshToken();
-
-      // To refetch api
-      _header.Authorization = `Bearer ${newToken}`;
-      response = await fetch(api, _header);
-      result = await response.json();
-      console.log('refetchResponse', response);
-      console.log('refetchResult', result);
-    }
-
-    if (
-      response.status === 500 ||
-      response.status === 502 ||
-      response.status === 504
-    ) {
-      throw new Error(Constants.SERVER_ERROR);
-    }
-
-    return result;
-  } catch (error) {
-    console.log('commonCall-error *** ', api, ' *** ', error);
-    throw error;
-  }
-};
+export const mockApi = (data: any) =>
+  new Promise(resolve => {
+    setTimeout(() => resolve(data), 2000);
+  });
 
 export const FetchApi = {
-  getInvoices: () => {
-    return commonCall();
+  getInvoices: async (params: GetInvoiceParams) => {
+    const account = AppAccount.get();
+
+    const header = {
+      method: 'GET',
+      headers: {
+        'org-token': account.memberships[0].token,
+      },
+    };
+    const api = Apis.invoiceList(params);
+    return commonCall(api, header);
+  },
+
+  login: async (data: any) => {
+    const header = {
+      method: 'POST',
+      body: new URLSearchParams({
+        client_id: data.clientId,
+        client_secret: data.clientSecret,
+        grant_type: 'password',
+        scope: 'openid',
+        username: 'dung+octopus4@101digital.io',
+        password: 'Abc@123456',
+      }).toString(),
+
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    };
+
+    const api = Apis.login;
+
+    return commonCall(api, header, authOption);
+  },
+
+  getUserProfile: async () => {
+    const header = {
+      method: 'GET',
+    };
+
+    const api = Apis.userProfile;
+
+    return commonCall(api, header);
   },
 };
