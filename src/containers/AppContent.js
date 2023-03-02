@@ -5,26 +5,26 @@ import {NavigationContainer} from '@react-navigation/native';
 import {InvoiceList} from '../screens/InvoiceList';
 import {CreateInvoice} from '../screens/CreateInvoice';
 
-const StackMain = createNativeStackNavigator();
+const RootStack = createNativeStackNavigator();
 
 export function AppContent() {
   return (
     <NavigationContainer>
-      <StackMain.Navigator
+      <RootStack.Navigator
         screenOptions={{
           animation: 'slide_from_right',
         }}>
-        <StackMain.Screen
+        <RootStack.Screen
           name="InvoiceList"
           component={InvoiceList}
           options={{title: 'InvoiceList'}}
         />
-        <StackMain.Screen
+        <RootStack.Screen
           name="CreateInvoice"
           component={CreateInvoice}
           options={{title: 'CreateInvoice'}}
         />
-      </StackMain.Navigator>
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 }
