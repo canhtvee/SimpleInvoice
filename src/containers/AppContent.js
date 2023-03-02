@@ -2,8 +2,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {InvoiceList} from '../screens/InvoiceList';
-import {CreateInvoice} from '../screens/CreateInvoice';
+import {Login} from '../screens/Login';
 
 const RootStack = createNativeStackNavigator();
 
@@ -15,14 +14,9 @@ export function AppContent() {
           animation: 'slide_from_right',
         }}>
         <RootStack.Screen
-          name="InvoiceList"
-          component={InvoiceList}
-          options={{title: 'InvoiceList'}}
-        />
-        <RootStack.Screen
-          name="CreateInvoice"
-          component={CreateInvoice}
-          options={{title: 'CreateInvoice'}}
+          name="Login"
+          component={Login}
+          options={{title: 'Login'}}
         />
       </RootStack.Navigator>
     </NavigationContainer>

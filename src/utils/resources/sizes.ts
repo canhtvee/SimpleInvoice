@@ -54,6 +54,10 @@ const Sizes = {
 
   borderRadius: 6,
   borderRadiuslx: 4,
+
+  space1x: _wpxToDP(10),
+  space2x: _wpxToDP(20),
+  space3x: _wpxToDP(30),
 };
 
 export {Sizes};

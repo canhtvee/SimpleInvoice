@@ -11,7 +11,7 @@ import {
 import {Controller, UseControllerProps, useFormState} from 'react-hook-form';
 import Feather from 'react-native-vector-icons/Feather';
 
-import {Colors, Sizes} from '../../utils';
+import {Colors, CommonStyles, Sizes} from '../../utils';
 
 import {AppText} from '../appText';
 
@@ -59,7 +59,7 @@ export function AppTextInput({
             <TextInput
               onBlur={onBlur}
               ref={ref}
-              onChange={onChange}
+              onChangeText={text => onChange(text)}
               value={value}
               maxLength={rules?.maxLength?.value || maxLength}
               autoCapitalize={'none'}
@@ -67,6 +67,7 @@ export function AppTextInput({
               spellCheck={false}
               style={[
                 styles.input,
+                CommonStyles.textInputPadding,
                 {
                   color: Colors.text,
                 },
@@ -110,6 +111,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     borderWidth: Sizes.borderWidth,
     borderRadius: Sizes.borderRadius,
+    borderColor: Colors.border,
   },
   input: {
     flex: 1,

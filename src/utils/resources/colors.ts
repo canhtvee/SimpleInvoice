@@ -1,3 +1,13 @@
+type AlphaType = '10%' | '20%' | '38%' | '54%' | '87%';
+
+const _addAlpha = (color: string, opacity: AlphaType): string => {
+  // coerce values so ti is between 0 and 1.
+  const _opacity = Math.round(
+    Math.min(Math.max(parseFloat(opacity) / 100 || 1, 0), 1) * 255,
+  );
+  return color + _opacity.toString(16).toUpperCase();
+};
+
 const Palette = {
   // To use for light theme
   blue_500: '#2196f3',
@@ -31,6 +41,12 @@ const Colors = {
   success: Palette.green_400,
 
   text: Palette.black,
+  placeholder: _addAlpha(Palette.black, '38%'),
+  border: _addAlpha(Palette.black, '54%'),
+  icon: _addAlpha(Palette.black, '87%'),
+  hover: _addAlpha(Palette.black, '20%'),
+  ripple: _addAlpha(Palette.black, '10%'),
+  withAlpha: (color: string, alpha: AlphaType) => _addAlpha(color, alpha),
 };
 
 export {Colors, Palette};
