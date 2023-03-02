@@ -2,10 +2,12 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 
+import {AppNavigation, useAppAccount} from '../utils';
+
 import {Login} from '../screens/Login';
 import {InvoiceList} from '../screens/InvoiceList';
 import {CreateInvoice} from '../screens/CreateInvoice';
-import {useAppAccount} from '../utils';
+import {InvoiceDetail} from '../screens/InvoiceDetail';
 
 const RootStack = createNativeStackNavigator();
 
@@ -14,7 +16,7 @@ export function AppContent() {
   const initialRouteName = account?.access_token ? 'InvoiceList' : 'Login';
 
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={AppNavigation.navigationRef}>
       <RootStack.Navigator
         screenOptions={{
           animation: 'slide_from_right',
@@ -29,6 +31,11 @@ export function AppContent() {
           name="InvoiceList"
           component={InvoiceList}
           options={{title: 'InvoiceList'}}
+        />
+        <RootStack.Screen
+          name="InvoiceDetail"
+          component={InvoiceDetail}
+          options={{title: 'InvoiceDetail'}}
         />
         <RootStack.Screen
           name="CreateInvoice"

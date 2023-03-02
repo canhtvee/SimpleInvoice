@@ -1,6 +1,6 @@
 import React from 'react';
 import {RefreshControl} from 'react-native';
-import {FlatList, View} from 'react-native';
+import {FlatList} from 'react-native';
 
 import {AppContainer, AppContentEmpty, AppViewLoading} from '../../commons';
 import {Colors, Sizes} from '../../utils';
@@ -8,10 +8,6 @@ import {Colors, Sizes} from '../../utils';
 import {InvoiceListItem} from './InvoiceListItem';
 
 import {useQueryInvoiceList} from './useQueryInvoiceList';
-
-const Line = () => (
-  <View style={{height: 1, backgroundColor: Colors.onBackground}} />
-);
 
 export function InvoiceList() {
   const {
@@ -27,9 +23,11 @@ export function InvoiceList() {
   return (
     <AppContainer>
       <FlatList
-        data={invoiceList || []}
+        data={invoiceList}
         contentContainerStyle={{
           paddingBottom: Sizes.padding * 2,
+          backgroundColor: Colors.ripple,
+          paddingTop: Sizes.paddinglxx,
         }}
         refreshControl={
           <RefreshControl refreshing={isRefetching} onRefresh={refetch} />
@@ -39,15 +37,23 @@ export function InvoiceList() {
           <InvoiceListItem data={item} index={index} />
         )}
         keyExtractor={(item, index) => `${item.invoiceId}-${index}`}
-        ItemSeparatorComponent={Line}
         ListEmptyComponent={
-          isLoading ? <AppViewLoading /> : <AppContentEmpty />
+          isLoading ? (
+            <AppViewLoading containerStyle={{marginTop: Sizes.space3x}} />
+          ) : (
+            <AppContentEmpty containerStyle={{marginTop: Sizes.space3x}} />
+          )
         }
         ListFooterComponent={
           isFetchingNextPage ? (
-            <AppViewLoading containerStyle={{marginTop: Sizes.padding}} />
+            <AppViewLoading
+              containerStyle={{
+                marginTop: Sizes.padding,
+              }}
+            />
           ) : null
         }
+        onEndReachedThreshold={0.1}
       />
     </AppContainer>
   );

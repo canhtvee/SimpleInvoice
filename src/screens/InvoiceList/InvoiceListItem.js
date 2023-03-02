@@ -1,9 +1,9 @@
 import React from 'react';
-import {Pressable} from 'react-native';
-import {View} from 'react-native';
+import {Pressable, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {AppText} from '../../commons';
-import {Sizes} from '../../utils';
+import {Colors, Sizes} from '../../utils';
 
 function InvoiceListItemField({label, value}) {
   return (
@@ -17,17 +17,24 @@ function InvoiceListItemField({label, value}) {
 }
 
 export function InvoiceListItem({data, index}) {
-  console.log('InvoiceListItem', data.invoiceId);
+  const navigation = useNavigation();
+
   return (
     <Pressable
       style={{
-        marginVertical: Sizes.padding,
-        paddingHorizontal: Sizes.padding,
+        marginVertical: Sizes.paddinglxx,
+        marginHorizontal: Sizes.padding,
         alignItems: 'center',
+        borderRadius: Sizes.borderRadius,
+        backgroundColor: Colors.background,
+        padding: Sizes.paddinglx,
+      }}
+      onPress={() => {
+        navigation.navigate('InvoiceDetail', {invoice: data});
       }}>
       <InvoiceListItemField label={'InvoiceId'} value={data.invoiceId} />
       <InvoiceListItemField label={'Due Date'} value={data.dueDate} />
-      <InvoiceListItemField label={'Customer'} value={data.customer} />
+      <InvoiceListItemField label={'Customer'} value={'data.customer'} />
       <InvoiceListItemField label={'Type'} value={data.type} />
     </Pressable>
   );

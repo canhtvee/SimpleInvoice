@@ -1,21 +1,38 @@
 import {useInfiniteQuery} from '@tanstack/react-query';
-import {FetchApi, mockApi} from '../../utils';
-import {mockInvoiceList} from './mocking';
+
+import {FetchApi} from '../../utils';
+import {convertInvoicePageToList} from './convertInvoicePageToList';
 
 const TAG = 'invoice-list';
 
 export function useQueryInvoiceList() {
   const {data = {}, ...queryReturn} = useInfiniteQuery(
     [`${TAG}`],
-    ({pageParam = 1}) => mockApi(mockInvoiceList),
+    ({pageParam = 1}) =>
+      FetchApi.getInvoices({
+        pageNum: pageParam,
+        pageSize: 10,
+        dateType: 'INVOICE_DATE',
+        sortBy: 'CREATED_DATE',
+        ordering: 'ASCENDING',
+      }),
     {
       getNextPageParam: lastPage => {
-        console.log('getNextPageParam', lastPage.length);
+        const {pageNumber, pageSize, totalRecords} = lastPage?.paging || {};
+
+        if (pageNumber * pageSize < totalRecords) {
+          return pageNumber + 1;
+        }
+
+        return undefined;
       },
     },
   );
 
-  console.log('useQueryInvoiceList:data', data);
+  const invoiceList = convertInvoicePageToList(data?.pages);
 
-  return {invoiceList: mockInvoiceList, ...queryReturn};
+  // console.log('useQueryInvoiceList:data', data);
+  // console.log('useQueryInvoiceList:invoiceList', invoiceList);
+
+  return {invoiceList, ...queryReturn};
 }
