@@ -81,9 +81,11 @@ export function AppTextInput({
 
         {secureTextEntry && (
           <Feather
-            name={secure ? 'eyes' : 'eyesOff'}
+            name={secure ? 'eye' : 'eye-off'}
             style={{paddingRight: Sizes.paddinglx}}
             onPress={() => setSecure(prev => !prev)}
+            size={Sizes.icon}
+            color={Colors.icon}
           />
         )}
       </View>
