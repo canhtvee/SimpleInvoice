@@ -2,7 +2,7 @@ export const mockInvoice = {
   invoices: [
     {
       bankAccount: {
-        bankId: '',
+        bankId: 'bankId',
         sortCode: '09-01-01',
         accountNumber: '12345678',
         accountName: 'John Terry',

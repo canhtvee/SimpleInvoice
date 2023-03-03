@@ -7,6 +7,7 @@ import {Sizes} from '../../utils';
 
 import {CreateInvoiceBankAccount} from './CreateInvoiceBankAccount';
 import {CreateInvoiceCustomer} from './CreateInvoiceCustomer';
+import {CreateInvoiceDocument} from './CreateInvoiceDocument';
 import {CreateInvoiceHeading} from './CreateInvoiceHeading';
 import {CreateInvoiceSubmit} from './CreateInvoiceSubmit';
 import {mockInvoice} from './mocking';
@@ -26,6 +27,7 @@ export function CreateInvoice() {
           <CreateInvoiceHeading />
           <CreateInvoiceBankAccount />
           <CreateInvoiceCustomer />
+          <CreateInvoiceDocument />
           <CreateInvoiceSubmit />
         </KeyboardAwareScrollView>
       </AppContainer>

@@ -1,16 +1,16 @@
 import React from 'react';
-import {useFieldArray, useFormContext} from 'react-hook-form';
 import {View} from 'react-native';
+import {useFieldArray, useFormContext} from 'react-hook-form';
 
 import {AppButtonNormal, AppText, renderFields} from '../../commons';
-import {Colors, Sizes} from '../../utils';
+import {Colors, Sizes, uuid} from '../../utils';
 
-export function CreateInvoiceCustomerAddress() {
-  const {control, getValues} = useFormContext();
+export function CreateInvoiceDocument() {
+  const {control} = useFormContext();
 
   const {fields, append, remove} = useFieldArray({
     control,
-    name: 'customer.addresses',
+    name: 'documents',
   });
 
   return (
@@ -21,11 +21,11 @@ export function CreateInvoiceCustomerAddress() {
           fontWeight: 'bold',
           borderRadius: Sizes.borderRadius,
         }}>
-        Customer Info Address
+        Documents
       </AppText>
 
       {fields.map((field, index) => {
-        const path = `customer.addresses.${index}`;
+        const path = `documents.${index}`;
 
         return (
           <View
@@ -42,11 +42,9 @@ export function CreateInvoiceCustomerAddress() {
             />
             {renderFields(
               [
-                {key: 'city'},
-                {key: 'countryCode'},
-                {key: 'county'},
-                {key: 'postcode'},
-                {key: 'premise'},
+                {key: 'documentId'},
+                {key: 'documentName'},
+                {key: 'documentUrl'},
               ],
               path,
               {control},
@@ -56,32 +54,17 @@ export function CreateInvoiceCustomerAddress() {
       })}
 
       <AppButtonNormal
-        title="Add Address"
+        title="Upload Document"
         style={{alignSelf: 'flex-end', marginTop: Sizes.space3x}}
-        onPress={() => append()}
+        onPress={() => {
+          const id = uuid();
+          append({
+            documentId: id,
+            documentName: 'Canh',
+            documentUrl: `http://url.com/#${id}`,
+          });
+        }}
       />
     </>
   );
 }
-
-const _ = {
-  addresses: [
-    {
-      city: 'hanoi',
-      countryCode: 'VN',
-      county: 'hoangmai',
-      postcode: '1000',
-      premise: 'CT11',
-    },
-    {
-      city: 'ninh binh',
-      countryCode: 'VN',
-      county: 'hoalu',
-      postcode: '20000',
-      premise: 'KimPhu',
-    },
-  ],
-  contact: {email: 'nguyendung2@101digital.io', mobileNumber: '+6597594971'},
-  firstName: 'Nguyen',
-  lastName: 'Dung 2',
-};

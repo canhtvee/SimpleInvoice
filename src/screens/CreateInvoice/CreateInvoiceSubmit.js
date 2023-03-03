@@ -14,6 +14,8 @@ export function CreateInvoiceSubmit() {
 
   const onSubmit = async data => {
     console.log(data);
+    console.log(data.customer);
+    console.log(data.documents);
     // try {
     // } catch (error) {
     //   Alert.alert(null, 'Login failed \nPlease try again!');
@@ -25,7 +27,7 @@ export function CreateInvoiceSubmit() {
       title="Create Invoice"
       onPress={handleSubmit(onSubmit)}
       isLoading={isSubmitting}
-      style={{marginTop: Sizes.wpx(40)}}
+      style={{marginVertical: Sizes.wpx(40)}}
     />
   );
 }
