@@ -24,8 +24,6 @@ export interface AppTextInputProps
   containerStyle?: StyleProp<ViewStyle>;
   inputContainerStyle?: StyleProp<ViewStyle>;
   inputStyle?: StyleProp<TextStyle>;
-  leftChild?: JSX.Element;
-  rightChild?: JSX.Element;
 }
 
 export function AppTextInput({
@@ -60,7 +58,7 @@ export function AppTextInput({
               onBlur={onBlur}
               ref={ref}
               onChangeText={text => onChange(text)}
-              value={value}
+              value={`${value}`}
               maxLength={rules?.maxLength?.value || maxLength}
               autoCapitalize={'none'}
               autoCorrect={false}

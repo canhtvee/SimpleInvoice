@@ -1,9 +1,10 @@
 import React from 'react';
-import {AppTextInput} from './AppTextInput';
+import {AppTextInput, AppTextInputProps} from './AppTextInput';
 
 type FieldItem = {
   key: string;
   children?: Array<FieldItem>;
+  config?: AppTextInputProps;
 };
 
 type FieldShape = Array<FieldItem>;
@@ -11,7 +12,7 @@ type FieldShape = Array<FieldItem>;
 export function renderFields(
   shape: FieldShape,
   path: string,
-  config: object,
+  generalConfig: object,
 ): any {
   return shape.map(item => {
     if (!item?.key) {
@@ -22,14 +23,15 @@ export function renderFields(
       const fieldPath = `${path}.${item.key}`;
 
       return React.createElement(AppTextInput, {
-        ...config,
         key: fieldPath,
         name: fieldPath,
         label: item.key,
         placeholder: 'Enter ' + fieldPath,
+        ...generalConfig,
+        ...item.config,
       });
     }
 
-    return renderFields(item.children, `${path}.${item.key}`, config);
+    return renderFields(item.children, `${path}.${item.key}`, generalConfig);
   });
 }
