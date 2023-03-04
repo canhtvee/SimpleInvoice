@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InvoiceDetail should render correctly 1`] = `
+<RNCSafeAreaView
+  edges={
+    [
+      "left",
+      "right",
+    ]
+  }
+  style={
+    [
+      {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "justifyContent": "flex-start",
+      },
+      undefined,
+    ]
+  }
+>
+  <RCTScrollView
+    contentContainerStyle={
+      {
+        "padding": 47,
+      }
+    }
+  >
+    <View />
+  </RCTScrollView>
+</RNCSafeAreaView>
+`;

@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should render correctly 1`] = `
+<RNCSafeAreaView
+  edges={
+    [
+      "left",
+      "right",
+    ]
+  }
+  style={
+    [
+      {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "justifyContent": "flex-start",
+      },
+      {
+        "paddingHorizontal": 59,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#000000",
+          "fontSize": 27.5,
+        },
+        {
+          "alignSelf": "center",
+          "fontSize": 43.5,
+          "fontWeight": "bold",
+          "marginTop": 118.5,
+        },
+      ]
+    }
+  >
+    Login to use Simple Invoice
+  </Text>
+  <View
+    style={
+      {
+        "marginTop": 59,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontSize": 27.5,
+          },
+          undefined,
+        ]
+      }
+    >
+      Client ID
+    </Text>
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "borderColor": "#0000008A",
+            "borderRadius": 6,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
+      }
+    >
+      <TextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        placeholder="Enter ClientId"
+        spellCheck={false}
+        style={
+          [
+            {
+              "flex": 1,
+              "fontSize": 27.5,
+              "paddingHorizontal": 16,
+            },
+            {
+              "paddingHorizontal": 16,
+              "paddingVertical": 23.5,
+            },
+            {
+              "color": "#000000",
+            },
+            undefined,
+          ]
+        }
+        value="oO8BMTesSg9Vl3_jAyKpbOd2fIEa"
+      />
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "marginTop": 39.5,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontSize": 27.5,
+          },
+          undefined,
+        ]
+      }
+    >
+      Client Secret
+    </Text>
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "borderColor": "#0000008A",
+            "borderRadius": 6,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
+      }
+    >
+      <TextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        placeholder="Enter Client Secret"
+        secureTextEntry={true}
+        spellCheck={false}
+        style={
+          [
+            {
+              "flex": 1,
+              "fontSize": 27.5,
+              "paddingHorizontal": 16,
+            },
+            {
+              "paddingHorizontal": 16,
+              "paddingVertical": 23.5,
+            },
+            {
+              "color": "#000000",
+            },
+            undefined,
+          ]
+        }
+        value="0Exp4dwqmpON_ezyhfm0o_Xkowka"
+      />
+      <Text
+        allowFontScaling={false}
+        onPress={[Function]}
+        selectable={false}
+        style={
+          [
+            {
+              "color": "#000000DE",
+              "fontSize": 35.5,
+            },
+            {
+              "paddingRight": 16,
+            },
+            {
+              "fontFamily": "Feather",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    hitSlop={16}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#2196f3",
+        "borderRadius": 6,
+        "height": 79,
+        "justifyContent": "center",
+        "marginTop": 79,
+        "opacity": 1,
+        "paddingHorizontal": 47,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontSize": 29.5,
+            "fontWeight": "600",
+          },
+          {
+            "color": "#FFFFFF",
+          },
+          undefined,
+          undefined,
+        ]
+      }
+    >
+      Login
+    </Text>
+  </View>
+</RNCSafeAreaView>
+`;

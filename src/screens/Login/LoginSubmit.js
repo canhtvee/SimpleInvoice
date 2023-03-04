@@ -30,7 +30,6 @@ export function LoginSubmit({control, handleSubmit}) {
 
       resetToHome();
     } catch (error) {
-      console.log(error);
       AppAccount.set();
       Alert.alert(null, 'Login failed \nPlease try again!');
     }

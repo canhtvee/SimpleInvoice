@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InvoiceList should render correctly 1`] = `
+<RNCSafeAreaView
+  edges={
+    [
+      "left",
+      "right",
+    ]
+  }
+  style={
+    [
+      {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "justifyContent": "flex-start",
+      },
+      undefined,
+    ]
+  }
+>
+  <TextInput
+    clearButtonMode="always"
+    onChangeText={[Function]}
+    placeholder="Search Invoice By DueDate"
+    style={
+      [
+        {
+          "borderColor": "#0000008A",
+          "borderRadius": 6,
+          "borderWidth": 1,
+          "fontSize": 27.5,
+          "margin": 23.5,
+          "paddingHorizontal": 16,
+        },
+        {
+          "paddingHorizontal": 16,
+          "paddingVertical": 23.5,
+        },
+      ]
+    }
+  />
+  <View>
+    <RCTScrollView
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
+    >
+      <View>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          hitSlop={16}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 6,
+              "height": 79,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 47,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "fontSize": 29.5,
+                  "fontWeight": "600",
+                },
+                {
+                  "color": "#FFFFFF",
+                },
+                {
+                  "color": "#2196f3",
+                },
+                undefined,
+              ]
+            }
+          >
+            Create Invoice
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          hitSlop={16}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 6,
+              "height": 79,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 47,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "fontSize": 29.5,
+                  "fontWeight": "600",
+                },
+                {
+                  "color": "#FFFFFF",
+                },
+                {
+                  "color": "#2196f3",
+                },
+                undefined,
+              ]
+            }
+          >
+            Sort by Latest
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          hitSlop={16}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 6,
+              "height": 79,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 47,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "fontSize": 29.5,
+                  "fontWeight": "600",
+                },
+                {
+                  "color": "#FFFFFF",
+                },
+                {
+                  "color": "#2196f3",
+                },
+                undefined,
+              ]
+            }
+          >
+            Sort by Newest
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <RCTScrollView
+    ListEmptyComponent={
+      <AppContentEmpty
+        containerStyle={
+          {
+            "marginTop": 59,
+          }
+        }
+      />
+    }
+    contentContainerStyle={
+      {
+        "backgroundColor": "#0000001A",
+        "paddingBottom": 47,
+        "paddingTop": 8,
+      }
+    }
+    data={[]}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "marginTop": 118.5,
+              "width": "100%",
+            },
+            {
+              "marginTop": 59,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontSize": 27.5,
+              },
+              [
+                {
+                  "paddingHorizontal": 23.5,
+                  "textAlign": "center",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Data is not available
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</RNCSafeAreaView>
+`;

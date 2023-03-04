@@ -16,7 +16,6 @@ export function useInvoiceList() {
     ];
   }
 
-  console.log(sortOrder);
   if (sortOrder) {
     const sorted =
       sortOrder === 'NEWEST'

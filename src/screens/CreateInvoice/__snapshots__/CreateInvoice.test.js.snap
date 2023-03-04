@@ -1,0 +1,371 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateInvoice should render correctly 1`] = `
+<RNCSafeAreaView
+  edges={
+    [
+      "left",
+      "right",
+    ]
+  }
+  style={
+    [
+      {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "justifyContent": "flex-start",
+      },
+      undefined,
+    ]
+  }
+>
+  <RCTScrollView
+    contentContainerStyle={
+      {
+        "paddingHorizontal": 59,
+      }
+    }
+  >
+    <View>
+      <Text
+        style={
+          [
+            {
+              "color": "#000000",
+              "fontSize": 27.5,
+            },
+            {
+              "alignSelf": "center",
+              "fontSize": 43.5,
+              "fontWeight": "bold",
+              "marginTop": 118.5,
+            },
+          ]
+        }
+      >
+        Create Invoice
+      </Text>
+      <View>
+        <Text
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontSize": 27.5,
+              },
+              undefined,
+            ]
+          }
+        >
+          invoiceReference
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "borderColor": "#0000008A",
+                "borderRadius": 6,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        >
+          <TextInput
+            autoCapitalize="none"
+            autoCorrect={false}
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            placeholder="#123456"
+            spellCheck={false}
+            style={
+              [
+                {
+                  "flex": 1,
+                  "fontSize": 27.5,
+                  "paddingHorizontal": 16,
+                },
+                {
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 23.5,
+                },
+                {
+                  "color": "#000000",
+                },
+                undefined,
+              ]
+            }
+            value=""
+          />
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontSize": 27.5,
+              },
+              undefined,
+            ]
+          }
+        >
+          amount
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "borderColor": "#0000008A",
+                "borderRadius": 6,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        >
+          <TextInput
+            autoCapitalize="none"
+            autoCorrect={false}
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            placeholder="100000"
+            spellCheck={false}
+            style={
+              [
+                {
+                  "flex": 1,
+                  "fontSize": 27.5,
+                  "paddingHorizontal": 16,
+                },
+                {
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 23.5,
+                },
+                {
+                  "color": "#000000",
+                },
+                undefined,
+              ]
+            }
+            value=""
+          />
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontSize": 27.5,
+              },
+              [
+                {
+                  "marginBottom": 16,
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          dueDate
+        </Text>
+        <View>
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "borderRadius": 6,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "overflow": "hidden",
+                },
+                {
+                  "borderColor": "#0000008A",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "fontSize": 27.5,
+                    "justifyContent": "space-between",
+                    "paddingHorizontal": 16,
+                    "paddingVertical": 23.5,
+                  },
+                  {
+                    "color": "#00000061",
+                  },
+                ]
+              }
+            >
+              YYYY-MM-DD
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontSize": 27.5,
+              },
+              undefined,
+            ]
+          }
+        >
+          description
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "borderColor": "#0000008A",
+                "borderRadius": 6,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        >
+          <TextInput
+            autoCapitalize="none"
+            autoCorrect={false}
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            placeholder="Invoice is issued to Akila Jayasinghe"
+            spellCheck={false}
+            style={
+              [
+                {
+                  "flex": 1,
+                  "fontSize": 27.5,
+                  "paddingHorizontal": 16,
+                },
+                {
+                  "paddingHorizontal": 16,
+                  "paddingVertical": 23.5,
+                },
+                {
+                  "color": "#000000",
+                },
+                undefined,
+              ]
+            }
+            value=""
+          />
+        </View>
+      </View>
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": false,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        hitSlop={16}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#2196f3",
+            "borderRadius": 6,
+            "height": 79,
+            "justifyContent": "center",
+            "marginVertical": 79,
+            "opacity": 1,
+            "paddingHorizontal": 47,
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "fontSize": 29.5,
+                "fontWeight": "600",
+              },
+              {
+                "color": "#FFFFFF",
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        >
+          Create Invoice
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</RNCSafeAreaView>
+`;
