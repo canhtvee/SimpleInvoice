@@ -2,7 +2,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {AppNavigation, useAppAccount} from '../utils';
+import {AppAccount, AppNavigation} from '../utils';
 
 import {Login} from '../screens/Login';
 import {InvoiceList} from '../screens/InvoiceList';
@@ -12,7 +12,7 @@ import {InvoiceDetail} from '../screens/InvoiceDetail';
 const RootStack = createNativeStackNavigator();
 
 export function AppContent() {
-  const account = useAppAccount();
+  const account = AppAccount.get();
   const initialRouteName = account?.access_token ? 'InvoiceList' : 'Login';
 
   return (

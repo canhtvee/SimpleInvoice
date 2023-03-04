@@ -7,8 +7,9 @@ import {useFormState} from 'react-hook-form';
 import {AppButton} from '../../commons';
 import {FetchApi, Sizes, uuid} from '../../utils';
 
-import {mockInvoice} from './mocking';
 import dayjs from 'dayjs';
+import {InvoiceService} from '../InvoiceList';
+import {mockInvoice} from './mocking';
 
 export function CreateInvoiceSubmit({control, handleSubmit}) {
   const navigation = useNavigation();
@@ -40,8 +41,10 @@ export function CreateInvoiceSubmit({control, handleSubmit}) {
       }
 
       Alert.alert(null, 'Create Invoice Successful');
+      InvoiceService.set(newInvoice);
       navigation.goBack();
     } catch (error) {
+      console.log('error', error);
       Alert.alert(null, 'Create Invoice Failed');
     }
   };

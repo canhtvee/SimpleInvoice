@@ -8,8 +8,8 @@ import {Colors, Sizes} from '../../utils';
 function InvoiceListItemField({label, value}) {
   return (
     <View style={{flexDirection: 'row'}}>
-      <AppText style={{width: Sizes.wpx(80)}}>{label}:</AppText>
-      <AppText style={{overflow: 'hidden', width: Sizes.wpx(270)}}>
+      <AppText style={{width: Sizes.wpx(100)}}>{label}:</AppText>
+      <AppText style={{overflow: 'hidden', width: Sizes.wpx(240)}}>
         {value}
       </AppText>
     </View>
@@ -32,10 +32,10 @@ export function InvoiceListItem({data, index}) {
       onPress={() => {
         navigation.navigate('InvoiceDetail', {invoice: data});
       }}>
-      <InvoiceListItemField label={'InvoiceId'} value={data.invoiceId} />
+      <InvoiceListItemField label={'Reference'} value={data.invoiceReference} />
       <InvoiceListItemField label={'Due Date'} value={data.dueDate} />
-      <InvoiceListItemField label={'Customer'} value={'data.customer'} />
-      <InvoiceListItemField label={'Type'} value={data.type} />
+      <InvoiceListItemField label={'Amount'} value={data.amount} />
+      <InvoiceListItemField label={'Description'} value={data.description} />
     </Pressable>
   );
 }

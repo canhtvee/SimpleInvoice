@@ -32,7 +32,7 @@ export function InvoiceListSearch() {
         },
         CommonStyles.textInputPadding,
       ]}
-      placeholder={'Search Invoice Number (IV1649318870503)'}
+      placeholder={'Search Invoice By DueDate'}
       value={state}
       onChangeText={text => setState(text)}
       clearButtonMode={'always'}

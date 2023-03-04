@@ -9,14 +9,9 @@ import {InvoiceListSearch} from './InvoiceListSearch';
 export function InvoiceList() {
   const form = useForm({
     defaultValues: {
-      sortOrder: 'ASCENDING',
+      sortOrder: 'NEWEST',
     },
   });
-
-  const a = '';
-  const b = '';
-
-  console.log((!!a && a) + (!!b && b));
 
   return (
     <FormProvider {...form}>

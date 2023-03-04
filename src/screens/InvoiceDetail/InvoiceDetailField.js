@@ -6,9 +6,10 @@ import {Sizes} from '../../utils';
 
 export function InvoiceDetailField({label, value}) {
   return (
-    <View style={{flexDirection: 'row', marginVertical: Sizes.paddinglx}}>
-      <AppText style={{width: Sizes.wpx(120)}}>{label}:</AppText>
-      <AppText style={{overflow: 'hidden', width: Sizes.wpx(250)}}>
+    <View style={{marginVertical: Sizes.paddinglx}}>
+      <AppText>{label}:</AppText>
+      <AppText
+        style={{overflow: 'hidden', alignSelf: 'flex-end', fontWeight: 'bold'}}>
         {value}
       </AppText>
     </View>

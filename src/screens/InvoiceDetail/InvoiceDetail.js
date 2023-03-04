@@ -1,9 +1,11 @@
-import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {ScrollView} from 'react-native';
+import {useRoute} from '@react-navigation/native';
+
 import {AppContainer} from '../../commons';
 import {Sizes} from '../../utils';
-import {InvoiceDetailField} from './InvoiceDetailField';
+
+import {renderInvoiceDetailFields} from './renderInvoiceDetailFields';
 
 export function InvoiceDetail() {
   const {params} = useRoute();
@@ -14,13 +16,9 @@ export function InvoiceDetail() {
     <AppContainer>
       <ScrollView
         contentContainerStyle={{
-          paddingBottom: Sizes.padding * 2,
-          paddingTop: Sizes.paddinglxx,
-          alignItems: 'center',
+          padding: Sizes.padding * 2,
         }}>
-        {Object.keys(invoice).map((key, index) => (
-          <InvoiceDetailField key={key} label={key} value={`${invoice[key]}`} />
-        ))}
+        {renderInvoiceDetailFields(invoice, '')}
       </ScrollView>
     </AppContainer>
   );

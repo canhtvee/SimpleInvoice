@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {useFormContext} from 'react-hook-form';
 
@@ -10,22 +10,24 @@ export function InvoiceListHeading() {
   const {setValue} = useFormContext();
 
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-      <AppButton
-        title="Create Invoice"
-        onPress={() => navigation.navigate('CreateInvoice')}
-        textButton
-      />
-      <AppButton
-        title="Sort ASCENDING"
-        textButton
-        onPress={() => setValue('sortOrder', 'ASCENDING')}
-      />
-      <AppButton
-        title="Sort DESCENDING"
-        textButton
-        onPress={() => setValue('sortOrder', 'DESCENDING')}
-      />
-    </ScrollView>
+    <View>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <AppButton
+          title="Create Invoice"
+          onPress={() => navigation.navigate('CreateInvoice')}
+          textButton
+        />
+        <AppButton
+          title="Sort by Latest"
+          textButton
+          onPress={() => setValue('sortOrder', 'LATEST')}
+        />
+        <AppButton
+          title="Sort by Newest"
+          textButton
+          onPress={() => setValue('sortOrder', 'NEWEST')}
+        />
+      </ScrollView>
+    </View>
   );
 }
