@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppContainer should render children 1`] = `
+<RNCSafeAreaView
+  edges={
+    [
+      "bottom",
+      "left",
+      "right",
+      "top",
+    ]
+  }
+  style={
+    [
+      {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "justifyContent": "flex-start",
+      },
+      {
+        "backgroundColor": "red",
+      },
+    ]
+  }
+>
+  <Text>
+    AppContainer_Test
+  </Text>
+</RNCSafeAreaView>
+`;

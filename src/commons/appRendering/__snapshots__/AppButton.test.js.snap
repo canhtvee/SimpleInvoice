@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppContentEmpty should render correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "marginTop": 118.5,
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#000000",
+          "fontSize": 27.5,
+        },
+        [
+          {
+            "paddingHorizontal": 23.5,
+            "textAlign": "center",
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    Data is not available
+  </Text>
+</View>
+`;

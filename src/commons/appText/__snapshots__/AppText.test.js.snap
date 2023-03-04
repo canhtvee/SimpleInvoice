@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppText should render correctly 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#000000",
+        "fontSize": 27.5,
+      },
+      undefined,
+    ]
+  }
+/>
+`;

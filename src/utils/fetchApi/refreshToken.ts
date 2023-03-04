@@ -31,7 +31,7 @@ async function handleRefreshToken() {
 
     const result = {token: undefined};
     if (!result?.token) {
-      Alert.alert('Session expired');
+      Alert.alert(null, 'Session expired');
       //Reset to login
       resetToLogin();
       throw new Error(Constants.SESSION_EXPIRED);

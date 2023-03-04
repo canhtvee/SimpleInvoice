@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppTextInput should render correctly 1`] = `
+<View>
+  <Text
+    style={
+      [
+        {
+          "color": "#000000",
+          "fontSize": 27.5,
+        },
+        undefined,
+      ]
+    }
+  >
+    test-label
+  </Text>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderColor": "#0000008A",
+          "borderRadius": 6,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <TextInput
+      autoCapitalize="none"
+      autoCorrect={false}
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      placeholder="test-input"
+      spellCheck={false}
+      style={
+        [
+          {
+            "flex": 1,
+            "fontSize": 27.5,
+            "paddingHorizontal": 16,
+          },
+          {
+            "paddingHorizontal": 16,
+            "paddingVertical": 23.5,
+          },
+          {
+            "color": "#000000",
+          },
+          undefined,
+        ]
+      }
+      value=""
+    />
+  </View>
+</View>
+`;

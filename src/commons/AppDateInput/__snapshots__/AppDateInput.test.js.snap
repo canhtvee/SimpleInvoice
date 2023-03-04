@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppDateInput should render correctly 1`] = `
+<View>
+  <Text
+    style={
+      [
+        {
+          "color": "#000000",
+          "fontSize": 27.5,
+        },
+        [
+          {
+            "marginBottom": 16,
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    test-label
+  </Text>
+  <View>
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "alignItems": "center",
+            "borderRadius": 6,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "overflow": "hidden",
+          },
+          {
+            "borderColor": "#0000008A",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "flex": 1,
+              "fontSize": 27.5,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 16,
+              "paddingVertical": 23.5,
+            },
+            {
+              "color": "#00000061",
+            },
+          ]
+        }
+      >
+        YYYY-MM-DD
+      </Text>
+    </View>
+  </View>
+</View>
+`;

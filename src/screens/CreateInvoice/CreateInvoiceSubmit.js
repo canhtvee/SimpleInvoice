@@ -3,9 +3,10 @@ import {Alert} from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
 import {useFormState} from 'react-hook-form';
+import uuid from 'react-native-uuid';
 
 import {AppButton} from '../../commons';
-import {FetchApi, Sizes, uuid} from '../../utils';
+import {FetchApi, Sizes} from '../../utils';
 
 import dayjs from 'dayjs';
 import {InvoiceService} from '../InvoiceList';
@@ -17,7 +18,7 @@ export function CreateInvoiceSubmit({control, handleSubmit}) {
 
   const onSubmit = async data => {
     const item = {
-      itemReference: uuid(),
+      itemReference: uuid.v4(),
       description: 'Honda RC' + Math.floor(Math.random() * 150 + 1),
       quantity: Math.floor(Math.random() * 10 + 1),
       amount: Math.floor(Math.random() * 10000 + 1000),
@@ -37,6 +38,7 @@ export function CreateInvoiceSubmit({control, handleSubmit}) {
       const result = await FetchApi.createInvoice(newInvoice);
 
       if (!result?.paging) {
+        Alert.alert(null, 'Create Invoice Failed');
         throw new Error();
       }
 
@@ -45,7 +47,6 @@ export function CreateInvoiceSubmit({control, handleSubmit}) {
       navigation.goBack();
     } catch (error) {
       console.log('error', error);
-      Alert.alert(null, 'Create Invoice Failed');
     }
   };
 

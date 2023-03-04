@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppButton should render correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  containerStyle={
+    {
+      "padding": 50,
+    }
+  }
+  focusable={true}
+  hitSlop={16}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#2196f3",
+      "borderRadius": 6,
+      "height": 79,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 47,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 29.5,
+          "fontWeight": "600",
+        },
+        {
+          "color": "#FFFFFF",
+        },
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    AppButton
+  </Text>
+</View>
+`;
