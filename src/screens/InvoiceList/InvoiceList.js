@@ -4,6 +4,7 @@ import {FlatList} from 'react-native';
 
 import {AppContainer, AppContentEmpty, AppViewLoading} from '../../commons';
 import {Colors, Sizes} from '../../utils';
+import {InvoiceListHeading} from './InvoiceListHeading';
 
 import {InvoiceListItem} from './InvoiceListItem';
 
@@ -22,6 +23,7 @@ export function InvoiceList() {
 
   return (
     <AppContainer>
+      <InvoiceListHeading />
       <FlatList
         data={invoiceList}
         contentContainerStyle={{

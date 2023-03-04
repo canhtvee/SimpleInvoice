@@ -16,7 +16,7 @@ export const FetchApi = {
     const header = {
       method: 'GET',
       headers: {
-        'org-token': account.memberships[0].token,
+        'org-token': account.org_token,
       },
     };
     const api = Apis.invoiceList(params);
@@ -51,6 +51,23 @@ export const FetchApi = {
     };
 
     const api = Apis.userProfile;
+
+    return commonCall(api, header);
+  },
+
+  createInvoice: async (data: any) => {
+    const account = AppAccount.get();
+    const header = {
+      method: 'POST',
+      headers: {
+        'org-token': account.org_token,
+      },
+      body: JSON.stringify({
+        invoices: [data],
+      }),
+    };
+
+    const api = Apis.createInvoice;
 
     return commonCall(api, header);
   },

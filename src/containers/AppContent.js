@@ -21,7 +21,7 @@ export function AppContent() {
         screenOptions={{
           animation: 'slide_from_right',
         }}
-        initialRouteName={'CreateInvoice'}>
+        initialRouteName={initialRouteName}>
         <RootStack.Screen
           name="Login"
           component={Login}

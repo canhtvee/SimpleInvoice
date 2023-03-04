@@ -30,20 +30,28 @@ export function CreateInvoice() {
           label="invoiceReference"
           control={control}
           name={'invoiceReference'}
-          placeholder={'invoiceReference'}
+          placeholder={'#123456'}
+          rules={{required: {value: true, message: 'Required'}}}
         />
         <AppTextInput
           label="amount"
           control={control}
           name={'amount'}
-          placeholder={'amount'}
+          placeholder={'100000'}
+          rules={{required: {value: true, message: 'Required'}}}
         />
-        <AppDateInput label="dueDate" control={control} name={'dueDate'} />
+        <AppDateInput
+          label="dueDate"
+          control={control}
+          name={'dueDate'}
+          rules={{required: {value: true, message: 'Required'}}}
+        />
         <AppTextInput
           label="description"
           control={control}
           name={'description'}
-          placeholder={'description'}
+          placeholder={'Invoice is issued to Akila Jayasinghe'}
+          rules={{required: {value: true, message: 'Required'}}}
         />
 
         <CreateInvoiceSubmit handleSubmit={handleSubmit} control={control} />

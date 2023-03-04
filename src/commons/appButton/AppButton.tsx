@@ -16,15 +16,17 @@ export interface AppButtonProps extends PressableProps {
   title?: string;
   titleStyle?: StyleProp<TextStyle>;
   isLoading?: boolean;
+  textButton?: boolean;
 }
 
-export function AppButtonNormal({
+export function AppButton({
   title,
   titleStyle,
   style,
   isLoading,
   disabled,
   onPress,
+  textButton,
   ...touchProps
 }: AppButtonProps) {
   let content;
@@ -32,7 +34,13 @@ export function AppButtonNormal({
     content = <ActivityIndicator color={Colors.onPrimary} size={Sizes.icon} />;
   } else {
     content = (
-      <Text style={[styles.title, {color: Colors.onPrimary}, titleStyle]}>
+      <Text
+        style={[
+          styles.title,
+          {color: Colors.onPrimary},
+          textButton && {color: Colors.primary},
+          titleStyle,
+        ]}>
         {title}
       </Text>
     );
@@ -49,6 +57,8 @@ export function AppButtonNormal({
             backgroundColor: Colors.primary,
             opacity: pressed ? 0.6 : 1,
           },
+
+          textButton && {backgroundColor: Colors.background},
           style,
         ]) as ViewStyle;
       }}
