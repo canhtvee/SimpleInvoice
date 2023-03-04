@@ -73,7 +73,7 @@ async function commonCall(
       console.log('=======================================================');
     console.log(_header);
     console.log(response);
-    console.log(result);
+    // console.log(result);
 
     return result;
   } catch (error) {

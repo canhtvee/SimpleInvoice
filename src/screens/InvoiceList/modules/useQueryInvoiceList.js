@@ -1,20 +1,20 @@
 import {useInfiniteQuery} from '@tanstack/react-query';
 
-import {FetchApi} from '../../utils';
+import {FetchApi} from '../../../utils';
 import {convertInvoicePageToList} from './convertInvoicePageToList';
+import {useQueryParams} from './useQueryParams';
 
 const TAG = 'invoice-list';
 
 export function useQueryInvoiceList() {
+  const {tag, params} = useQueryParams(TAG);
+
   const {data = {}, ...queryReturn} = useInfiniteQuery(
-    [`${TAG}`],
+    [tag],
     ({pageParam = 1}) =>
       FetchApi.getInvoices({
+        ...params,
         pageNum: pageParam,
-        pageSize: 10,
-        dateType: 'INVOICE_DATE',
-        sortBy: 'CREATED_DATE',
-        ordering: 'ASCENDING',
       }),
     {
       getNextPageParam: lastPage => {
@@ -30,9 +30,6 @@ export function useQueryInvoiceList() {
   );
 
   const invoiceList = convertInvoicePageToList(data?.pages);
-
-  // console.log('useQueryInvoiceList:data', data);
-  // console.log('useQueryInvoiceList:invoiceList', invoiceList);
 
   return {invoiceList, ...queryReturn};
 }

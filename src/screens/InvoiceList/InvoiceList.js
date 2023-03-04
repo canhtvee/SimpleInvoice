@@ -1,62 +1,30 @@
 import React from 'react';
-import {RefreshControl} from 'react-native';
-import {FlatList} from 'react-native';
+import {FormProvider, useForm} from 'react-hook-form';
 
-import {AppContainer, AppContentEmpty, AppViewLoading} from '../../commons';
-import {Colors, Sizes} from '../../utils';
+import {AppContainer} from '../../commons';
+import {InvoiceListContent} from './InvoiceListContent';
 import {InvoiceListHeading} from './InvoiceListHeading';
-
-import {InvoiceListItem} from './InvoiceListItem';
-
-import {useQueryInvoiceList} from './useQueryInvoiceList';
+import {InvoiceListSearch} from './InvoiceListSearch';
 
 export function InvoiceList() {
-  const {
-    invoiceList,
-    isLoading,
-    isFetchingNextPage,
-    fetchNextPage,
-    hasNextPage,
-    refetch,
-    isRefetching,
-  } = useQueryInvoiceList();
+  const form = useForm({
+    defaultValues: {
+      sortOrder: 'ASCENDING',
+    },
+  });
+
+  const a = '';
+  const b = '';
+
+  console.log((!!a && a) + (!!b && b));
 
   return (
-    <AppContainer>
-      <InvoiceListHeading />
-      <FlatList
-        data={invoiceList}
-        contentContainerStyle={{
-          paddingBottom: Sizes.padding * 2,
-          backgroundColor: Colors.ripple,
-          paddingTop: Sizes.paddinglxx,
-        }}
-        refreshControl={
-          <RefreshControl refreshing={isRefetching} onRefresh={refetch} />
-        }
-        onEndReached={() => hasNextPage && fetchNextPage()}
-        renderItem={({item, index}) => (
-          <InvoiceListItem data={item} index={index} />
-        )}
-        keyExtractor={(item, index) => `${item.invoiceId}-${index}`}
-        ListEmptyComponent={
-          isLoading ? (
-            <AppViewLoading containerStyle={{marginTop: Sizes.space3x}} />
-          ) : (
-            <AppContentEmpty containerStyle={{marginTop: Sizes.space3x}} />
-          )
-        }
-        ListFooterComponent={
-          isFetchingNextPage ? (
-            <AppViewLoading
-              containerStyle={{
-                marginTop: Sizes.padding,
-              }}
-            />
-          ) : null
-        }
-        onEndReachedThreshold={0.1}
-      />
-    </AppContainer>
+    <FormProvider {...form}>
+      <AppContainer>
+        <InvoiceListSearch />
+        <InvoiceListHeading />
+        <InvoiceListContent />
+      </AppContainer>
+    </FormProvider>
   );
 }

@@ -32,7 +32,6 @@ export function AppViewLoading({containerStyle}: AppViewLoadingProps) {
         {
           backgroundColor: Colors.background,
           justifyContent: 'center',
-          alignItems: 'center',
         },
         containerStyle,
       ]}>
