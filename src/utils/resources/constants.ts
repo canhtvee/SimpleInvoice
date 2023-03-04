@@ -13,4 +13,5 @@ export const Constants = {
   NETWORK_REQUEST_FAILED: 'Network request failed',
   NETWORK_ERROR: 'NETWORK_ERROR',
   ACCOUNT_DEACTIVATE: 'ACCOUNT_DEACTIVATE',
+  INVALID_CREDENTIAL: 'Invalid Credentials',
 };
