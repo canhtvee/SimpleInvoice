@@ -1,6 +1,8 @@
 import React from 'react';
 import {StyleProp, TextStyle, View, ViewStyle} from 'react-native';
+
 import {Sizes, Strings} from '../../utils';
+
 import {AppText} from '../appText';
 
 export interface AppContentEmptyProps {

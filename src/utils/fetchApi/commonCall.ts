@@ -41,9 +41,6 @@ async function commonCall(
     }
 
     // If use refresh token
-
-    console.log(result);
-
     if (
       response.status === 401 &&
       result['ams:fault'] &&
@@ -73,7 +70,7 @@ async function commonCall(
       console.log('=======================================================');
     console.log(_header);
     console.log(response);
-    // console.log(result);
+    console.log(result);
 
     return result;
   } catch (error) {
@@ -85,15 +82,3 @@ async function commonCall(
 const authOption = {withRefreshToken: false, withToken: false};
 
 export {commonCall, authOption};
-
-// const _ = (
-//   <ams:fault xmlns:ams="http://wso2.org/apimanager/security">
-//     <ams:code>900901</ams:code>
-//     <ams:message>Invalid Credentials</ams:message>
-//     <ams:description>
-//       Access failure for API: /invoice-service/1.0.0, version: 1.0.0 status:
-//       (900901) - Invalid Credentials. Make sure you have given the correct
-//       access token
-//     </ams:description>
-//   </ams:fault>
-// );

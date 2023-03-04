@@ -20,7 +20,7 @@ const AppAccount = {
     }
   },
 
-  set: (value: object) => {
+  set: (value?: object) => {
     if (!value) {
       return MMKVwithID.set(mmkvKey, JSON.stringify({}));
     }
