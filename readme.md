@@ -15,7 +15,7 @@
 - [react-native-mmkv](https://github.com/mrousavy/react-native-mmkv) for local storage solution.
 - [jest](https://facebook.github.io/jest/) and [react-native-testing-library](https://callstack.github.io/react-native-testing-library/) for testing.
 
-## Folder structure ([checkout here for more detail](https://github.com/canhtvee/SimpleInvoice/master/docs/DependencyGraph.md))
+## Folder structure ([checkout here for more detail](https://github.com/canhtvee/SimpleInvoice/blob/master/docs/DependencyGraph.md))
 
 The project structure is very simple:
 
