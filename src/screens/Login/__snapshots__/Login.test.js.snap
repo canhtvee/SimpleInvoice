@@ -80,6 +80,7 @@ exports[`Login should render correctly 1`] = `
         onBlur={[Function]}
         onChangeText={[Function]}
         placeholder="Enter ClientId"
+        placeholderTextColor="#00000061"
         spellCheck={false}
         style={
           [
@@ -143,6 +144,7 @@ exports[`Login should render correctly 1`] = `
         onBlur={[Function]}
         onChangeText={[Function]}
         placeholder="Enter Client Secret"
+        placeholderTextColor="#00000061"
         secureTextEntry={true}
         spellCheck={false}
         style={

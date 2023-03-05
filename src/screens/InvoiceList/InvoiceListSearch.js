@@ -29,10 +29,12 @@ export function InvoiceListSearch() {
           borderWidth: 1,
           borderRadius: Sizes.borderRadius,
           margin: Sizes.padding,
+          color: Colors.text,
         },
         CommonStyles.textInputPadding,
       ]}
       placeholder={'Search Invoice By DueDate'}
+      placeholderTextColor={Colors.placeholder}
       value={state}
       onChangeText={text => setState(text)}
       clearButtonMode={'always'}

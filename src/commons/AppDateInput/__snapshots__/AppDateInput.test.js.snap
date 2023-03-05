@@ -9,12 +9,7 @@ exports[`AppDateInput should render correctly 1`] = `
           "color": "#000000",
           "fontSize": 27.5,
         },
-        [
-          {
-            "marginBottom": 16,
-          },
-          undefined,
-        ],
+        undefined,
       ]
     }
   >

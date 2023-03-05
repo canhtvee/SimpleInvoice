@@ -71,6 +71,7 @@ export function AppTextInput({
                 },
                 inputStyle,
               ]}
+              placeholderTextColor={Colors.placeholder}
               secureTextEntry={secure}
               {...textInputProps}
             />
@@ -93,7 +94,6 @@ export function AppTextInput({
           style={[
             {
               color: Colors.error,
-              marginTop: Sizes.paddinglx,
             },
             errorStyle,
           ]}>

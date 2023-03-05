@@ -2,6 +2,7 @@ import React from 'react';
 import {cleanup, render} from '@testing-library/react-native';
 
 import {CreateInvoice} from './CreateInvoice';
+import {renderWithNavigator} from '../../utils';
 
 /**
  * Run test command
@@ -20,7 +21,7 @@ jest.mock('react-native-keyboard-aware-scroll-view', () => {
 
 describe('CreateInvoice', () => {
   test('should render correctly', () => {
-    const tree = render(<CreateInvoice />);
+    const tree = renderWithNavigator(<CreateInvoice />);
 
     expect(tree).toMatchSnapshot();
   });

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -16,6 +16,7 @@ import {Colors, Sizes} from '../../utils';
 import {AppText} from '../appText';
 
 import {Picker, PickerProps} from './Picker';
+import DatePicker from 'react-native-date-picker';
 
 export interface AppDateInputProps
   extends UseControllerProps,
@@ -41,16 +42,13 @@ export function AppDateInput({
   minimumDate = new Date('1900-01-01'),
   ...pickerProps
 }: AppDateInputProps) {
+  const [openModal, setOpenModal] = React.useState(false);
+
   const {errors} = useFormState({control, name});
-  const pickerRef = useRef<any>();
 
   return (
     <View style={containerStyle}>
-      {label && (
-        <AppText style={[{marginBottom: Sizes.paddinglx}, labelStyle]}>
-          {label}
-        </AppText>
-      )}
+      {label && <AppText style={labelStyle}>{label}</AppText>}
 
       <Controller
         defaultValue={defaultValue}
@@ -61,7 +59,7 @@ export function AppDateInput({
           <View>
             <Pressable
               onPress={() => {
-                pickerRef.current?.show();
+                setOpenModal(true);
               }}
               style={[styles.textContainer, {borderColor: Colors.border}]}>
               {value ? (
@@ -75,19 +73,20 @@ export function AppDateInput({
               )}
             </Pressable>
 
-            <Picker
-              ref={pickerRef}
+            <DatePicker
+              open={openModal}
+              theme="light"
               modal={modal}
               minimumDate={minimumDate}
               mode={mode}
               date={value || new Date()}
               title={null}
               onConfirm={date => {
-                pickerRef.current?.show();
+                setOpenModal(false);
                 onChange(date);
               }}
               onCancel={() => {
-                pickerRef.current?.show();
+                setOpenModal(false);
               }}
               {...pickerProps}
             />
@@ -100,7 +99,6 @@ export function AppDateInput({
           style={[
             {
               color: Colors.error,
-              marginTop: Sizes.paddinglx,
             },
             errorStyle,
           ]}>

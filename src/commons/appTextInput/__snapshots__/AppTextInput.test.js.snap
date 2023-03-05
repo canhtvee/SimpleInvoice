@@ -36,6 +36,7 @@ exports[`AppTextInput should render correctly 1`] = `
       onBlur={[Function]}
       onChangeText={[Function]}
       placeholder="test-input"
+      placeholderTextColor="#00000061"
       spellCheck={false}
       style={
         [

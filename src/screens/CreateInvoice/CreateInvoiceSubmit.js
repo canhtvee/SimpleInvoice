@@ -13,7 +13,7 @@ import {InvoiceService} from '../InvoiceList';
 import {mockInvoice} from './mocking';
 
 export function CreateInvoiceSubmit({control, handleSubmit}) {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   const {isSubmitting} = useFormState({control});
 
   const onSubmit = async data => {
@@ -44,7 +44,7 @@ export function CreateInvoiceSubmit({control, handleSubmit}) {
 
       Alert.alert(null, 'Create Invoice Successful');
       InvoiceService.set(newInvoice);
-      // navigation.goBack();
+      navigation.goBack();
     } catch (error) {
       console.log('error', error);
     }

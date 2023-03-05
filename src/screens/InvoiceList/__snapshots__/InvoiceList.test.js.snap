@@ -23,12 +23,14 @@ exports[`InvoiceList should render correctly 1`] = `
     clearButtonMode="always"
     onChangeText={[Function]}
     placeholder="Search Invoice By DueDate"
+    placeholderTextColor="#00000061"
     style={
       [
         {
           "borderColor": "#0000008A",
           "borderRadius": 6,
           "borderWidth": 1,
+          "color": "#000000",
           "fontSize": 27.5,
           "margin": 23.5,
           "paddingHorizontal": 16,
