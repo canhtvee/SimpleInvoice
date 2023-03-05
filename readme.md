@@ -62,6 +62,8 @@ For more info please go to https://reactnative.dev/docs/publishing-to-app-store
 
 ## Scripts
 
+- run `yarn` to install all node packages
 - run `yarn test` to run unit test
+- run `yarn pod` for cocoapod install
 - run `yarn ios` to run ios app in debug mode
 - run `yarn android` to run android app in debug mode
